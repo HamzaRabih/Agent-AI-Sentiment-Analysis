@@ -16,6 +16,7 @@ Le notebook principal permet de :
 - construire des prompts zero-shot, few-shot et chain-of-thought,
 - interroger differents modeles de langage,
 - comparer les resultats avec le score F1 micro,
+
 ![alt text](image-1.png)
 - mesurer la robustesse des approches few-shot sur plusieurs tirages.
 
@@ -81,6 +82,23 @@ Le notebook produit un tableau de synthese contenant :
 - le nombre d'exemples evalues.
 
 ![alt text](image.png)
+
+## F1-score
+
+### Quand utiliser le F1-score ?
+
+Le F1-score est particulièrement utile lorsque :
+- les classes sont déséquilibrées (par exemple 99 % de négatifs et 1 % de positifs) ;
+- les faux positifs et les faux négatifs sont tous deux importants ;
+- on cherche un compromis entre précision et rappel.
+
+| Métrique | Formule | Question à laquelle elle répond |
+|-----------|----------|---------------------------------|
+| **Precision** | $`\frac{TP}{TP+FP}`$ | Parmi les prédictions positives, combien sont correctes ? |
+| **Recall** | $`\frac{TP}{TP+FN}`$ | Parmi les vrais positifs, combien ont été retrouvés ? |
+| **F1-score** | $`2 \times \frac{\text{Precision} \times \text{Recall}}{\text{Precision} + \text{Recall}}`$ | Quel est l'équilibre entre la précision et le rappel ? |
+
+
 ## Probleme frequents
 
 - Si aucun modele n'apparait, verifier `OPENAI_API_KEY` ou le service Ollama.
